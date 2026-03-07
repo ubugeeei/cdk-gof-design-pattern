@@ -1,4 +1,4 @@
-# cdk-gof-design-pattern
+# cdk-gof-design-patterns
 
 AWS Dev Day 2023 Tokyo での登壇セッション『**AWS CDK で学ぶ GoF デザインパターン 〜IaC にもコード設計〜**』の CDK コード実例とクラス図集です。
 

@@ -5,38 +5,44 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   ci:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
 
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v4
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
         with:
-          node-version: "24"
-          cache: "pnpm"
+          node-version-file: ".node-version"
+          cache: true
+          run-install: false
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: vp install --frozen-lockfile
 
-      - name: Lint
-        run: pnpm lint
-
-      - name: Format check
-        run: pnpm fmt --check
-
-      - name: Type check
-        run: pnpm check
+      - name: Check
+        run: vp check
 
       - name: Test
-        run: pnpm test -- --run
+        run: vp test
 
-      - name: Build
-        run: pnpm build
+      - name: Pack
+        run: vp pack
 
       - name: CDK Synth
-        run: pnpm cdk synth
+        env:
+          JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION: "1"
+        run: vp exec cdk synth

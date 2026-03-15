@@ -5,16 +5,6 @@
     "cdk-gof-design-pattern": "dist/bin/cdk-gof-design-pattern.mjs"
   },
   "type": "module",
-  "scripts": {
-    "build": "tsdown",
-    "watch": "tsgo --watch",
-    "check": "tsgo",
-    "test": "vitest",
-    "lint": "oxlint --type-aware",
-    "fmt": "oxfmt",
-    "cdk": "cdk",
-    "build:singleton": "tsdown --filter singleton"
-  },
   "dependencies": {
     "aws-cdk-lib": "catalog:",
     "constructs": "catalog:"
@@ -22,17 +12,13 @@
   "devDependencies": {
     "@types/aws-lambda": "catalog:",
     "@types/node": "catalog:",
-    "@typescript/native-preview": "catalog:",
     "aws-cdk": "catalog:",
     "esbuild": "catalog:",
-    "oxfmt": "catalog:",
-    "oxlint": "catalog:",
-    "oxlint-tsgolint": "catalog:",
-    "tsdown": "catalog:",
-    "vitest": "catalog:"
+    "typescript": "catalog:",
+    "vite-plus": "catalog:"
   },
   "engines": {
-    "node": ">=24.0.0"
+    "node": ">=24.14.0 <25"
   },
   "packageManager": "pnpm@10.28.1"
 }

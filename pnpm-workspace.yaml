@@ -1,5 +1,9 @@
 packages: []
 
+overrides:
+  vite: npm:@voidzero-dev/vite-plus-core@0.1.11
+  vitest: npm:@voidzero-dev/vite-plus-test@0.1.11
+
 catalog:
   # AWS CDK
   aws-cdk-lib: "2.60.0"
@@ -17,11 +21,7 @@ catalog:
   "@types/node": "24.10.9"
 
   # TypeScript
-  "@typescript/native-preview": "7.0.0-dev.20260124.1"
+  typescript: "^5.9.3"
 
   # Build & Dev tools
-  tsdown: "^0.20.1"
-  vitest: "^4"
-  oxlint: "^1.41.0"
-  oxlint-tsgolint: "^0.11.1"
-  oxfmt: "^0.26.0"
+  vite-plus: "0.1.11"

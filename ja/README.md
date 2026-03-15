@@ -9,6 +9,21 @@ AWS Dev Day 2023 Tokyo での登壇セッション『**AWS CDK で学ぶ GoF デ
 - その他参考
   - ブログ記事: [AWS CDK 内部実装で使われている GoF デザインパターン](https://go-to-k.hatenablog.com/entry/aws-cdk-internal-gof-paterns)
 
+## Tooling
+
+このリポジトリでは TypeScript ツールチェーンとして `Vite+` を利用します。
+
+- まず [viteplus.dev](https://viteplus.dev) から `vp` CLI を導入
+- `.node-version` で Node.js `24.14.0` を固定
+- `vp env use` でプロジェクトの Node.js バージョンを選択
+- `package.json` の `packageManager` で `pnpm@10.28.1` を固定し、`vp install` が自動で利用
+- 依存関係のインストールは `vp install`
+- 通常の検証は `vp check`
+- テストは `vp test`
+- パッケージングは `vp pack`
+- TypeScript 製の CLI エントリーポイント実行は `vp run cli`
+- CDK コマンドは `vp exec cdk` を利用
+
 ## Composite
 
 ### Composite: 概念

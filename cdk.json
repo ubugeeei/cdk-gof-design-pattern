@@ -1,5 +1,5 @@
 {
-  "app": "node --enable-source-maps bin/cdk-gof-design-pattern.ts",
+  "app": "node --enable-source-maps --strip-types bin/cdk-gof-design-pattern.ts",
   "watch": {
     "include": ["**"],
     "exclude": [

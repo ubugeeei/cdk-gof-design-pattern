@@ -4,6 +4,21 @@ This repository is about **AWS CDK with Gof Design patterns**, including class d
 
 The following in Japanese, [Japanese README](./ja/README.md).
 
+## Tooling
+
+This repository uses `Vite+` as the TypeScript toolchain.
+
+- Install the `vp` CLI from [viteplus.dev](https://viteplus.dev) first.
+- `.node-version` pins the project Node.js version to `24.14.0`.
+- Select the project Node.js version with `vp env use`.
+- `package.json` pins the package manager version to `pnpm@10.28.1`, which `vp install` uses automatically.
+- Install dependencies with `vp install`.
+- Run the default verification flow with `vp check`.
+- Run tests with `vp test`.
+- Package the library and CDK entry point with `vp pack`.
+- Run the TypeScript CLI entry point with `vp run cli`.
+- Use `vp exec cdk` for CDK commands such as `vp exec cdk synth`.
+
 ## Composite
 
 ### Composite: Concept
